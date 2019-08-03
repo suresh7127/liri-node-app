@@ -7,3 +7,6 @@ exports.spotify = {
 exports.OMDB = {
   id: process.env.OMDB_ID,
 };
+exports.bandsintown = {
+  id: process.env.bandsintown_ID,
+};

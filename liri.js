@@ -16,8 +16,7 @@ function findConcerts(search) {
   if (!search) {
     search = "ACL"
   };
-
-  var queryURL = "https://rest.bandsintown.com/artists/" + search + "/events?apikey=trilogy";
+  var queryURL = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp";
 
   axios({
     method: 'get',
