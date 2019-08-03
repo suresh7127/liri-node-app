@@ -31,4 +31,5 @@ Bands In Town API - for show information.
 
 As a developer, I take help of these dependencies and node.js application to make this project possible.
 <br>
-Please check the screenshot of these command in the images folder to better understand how these app works.
+Please check the screenshot of these command in the images folder to better understand how these app works.<br>
+I also updated my portfolio on github.
