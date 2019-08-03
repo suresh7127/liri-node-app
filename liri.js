@@ -12,9 +12,9 @@ var term = process.argv.slice(3).join(" ");
 
 function findConcerts(search) {
   console.log("Finding your concerts...");
-  // default Foo Fighters
+  // default ACL
   if (!search) {
-    search = "Foo Fighters"
+    search = "ACL"
   };
 
   var queryURL = "https://rest.bandsintown.com/artists/" + search + "/events?apikey=trilogy";
@@ -68,7 +68,7 @@ function findMovies(search) {
     search = "Mr. Nobody";
   };
 
-  var queryURL = "https://www.omdbapi.com/?apikey=trilogy&t=" + search;
+  var queryURL = "https://www.omdbapi.com/?apikey=6bb89f2b&t=" + search;
 
   axios({
     method: 'get',
