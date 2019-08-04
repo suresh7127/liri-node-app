@@ -1,6 +1,8 @@
 # liri-node-app
 Homework-10
 <br>
+https://github.com/suresh7127/liri-node-app.git
+<br>
 Liri Bot:
 With the help of this application, users can search for concerts, songs or movies on the command line. This node application utilizes Bands In Town, Spotify and OMDB API calls and modules to make request from CLI.
 <br>
