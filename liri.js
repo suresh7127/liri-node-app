@@ -4,27 +4,27 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
-var fs = require("fs");
 var moment = require("moment");
+var fs = require("fs");
 
 var type = process.argv[2];
 var term = process.argv.slice(3).join(" ");
 
-function findConcerts(search) {
+function findConcerts(concert) {
   console.log("Finding your concerts...");
   // default ACL
-  if (!search) {
-    search = "ACL"
+  if (!concert) {
+    concert = "ACL"
   };
-  var queryURL = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp";
+  var queryURL = "https://rest.bandsintown.com/artists/" + concert + "/events?app_id=codingbootcamp";
 
   axios({
     method: 'get',
     url: queryURL
   })
     .then(function (res) {
-      console.log("=========NEW SHOW LIST=========\n");
-      console.log(`Catch ${search} at: \n`);
+      console.log("=========UPCOMING SHOW LIST=========\n");
+      console.log(`Catch ${concert} at: \n`);
       for (var i = 0; i < res.data.length; i++) {
         var venue = res.data[i].venue.name;
         var location = res.data[i].venue.city + ", " + res.data[i].venue.region;
@@ -54,20 +54,20 @@ function findSongs(search) {
       var artist = data.tracks.items[0].album.artists[0].name;
       var album = data.tracks.items[0].album.name;
       var preview = data.tracks.items[0].preview_url;
-      console.log("=========NEW SONG=========\n");
+      console.log("=========HERE IS YOUR SONG=========\n");
       console.log(`Check out "${track}" off of the album '${album}' by '${artist}' here: ${preview}`);
       console.log("\n==========================");
     });
 }
 
-function findMovies(search) {
+function findMovies(movie) {
   console.log("Finding your movie...");
 
-  if (!search) {
-    search = "Mr. Nobody";
+  if (!movie) {
+    movie = "Mr. Nobody";
   };
 
-  var queryURL = "https://www.omdbapi.com/?apikey=6bb89f2b&t=" + search;
+  var queryURL = "https://www.omdbapi.com/?apikey=6bb89f2b&t=" + movie;
 
   axios({
     method: 'get',
@@ -82,7 +82,7 @@ function findMovies(search) {
       var language = res.data.Language;
       var plot = res.data.Plot;
       var actors = res.data.Actors;
-      console.log("=========NEW MOVIE=========\n");
+      console.log("=========HERE IS YOUR MOVIE=========\n");
       console.log(`${title} (${year}): ${plot}. \nThe film was produced in ${country} and available in ${language}. Rated ${imdb} on IMDB and ${rotten} on Rotten Tomatoes. \nStarring: ${actors}. `)
       console.log("\n===========================");
     });
