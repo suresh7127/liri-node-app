@@ -16,7 +16,7 @@ function findConcerts(concert) {
   if (!concert) {
     concert = "ACL"
   };
-  var queryURL = "https://rest.bandsintown.com/artists/" + concert + "/events?app_id=codingbootcamp";
+  var queryURL = "https://rest.bandsintown.com/artists/" + concert + "/events?app_id=" + keys.bandsintown.id;
 
   axios({
     method: 'get',
