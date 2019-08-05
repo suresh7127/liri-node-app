@@ -32,6 +32,11 @@ function findConcerts(concert) {
         console.log(`${venue} in ${location} on ${date}`);
       }
       console.log("\n===============================");
+
+      fs.appendFile("log.txt", concert, function (err, res) {
+        if (err) throw err;
+        console.log(res);
+      });
     });
 }
 
@@ -57,6 +62,11 @@ function findSongs(search) {
       console.log("=========HERE IS YOUR SONG=========\n");
       console.log(`Check out "${track}" off of the album '${album}' by '${artist}' here: ${preview}`);
       console.log("\n==========================");
+
+      fs.appendFile("log.txt", search, function (err, data) {
+        if (err) throw err;
+        console.log(search);
+      });
     });
 }
 
@@ -85,6 +95,11 @@ function findMovies(movie) {
       console.log("=========HERE IS YOUR MOVIE=========\n");
       console.log(`${title} (${year}): ${plot}. \nThe film was produced in ${country} and available in ${language}. Rated ${imdb} on IMDB and ${rotten} on Rotten Tomatoes. \nStarring: ${actors}. `)
       console.log("\n===========================");
+
+      fs.appendFile("log.txt", queryURL, function (res, err) {
+        if (err) throw err;
+        console.log(res);
+      });
     });
 }
 
