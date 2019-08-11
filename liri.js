@@ -76,8 +76,9 @@ function findMovies(movie) {
   if (!movie) {
     movie = "Mr. Nobody";
   };
+  // "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
 
-  var queryURL = "https://www.omdbapi.com/?apikey=6bb89f2b&t=" + movie;
+  var queryURL = "https://www.omdbapi.com/?t=" + movie + "app_id=" + keys.OMDB.id;
 
   axios({
     method: 'get',
